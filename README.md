@@ -19,3 +19,11 @@ Dev Ops In A Box deploys:
 * Three Resource Groups Created
 * Three VNets created in each Resource Group
 * Storage Account deployed in Management Resource Group
+
+# Importing these Blueprints
+To use DevOps In A Box:
+1. Clone this repository
+2. Create a Management Group in your Azure subscription
+3. Follow [this Azure Blueprints Guide](https://docs.microsoft.com/en-us/azure/governance/blueprints/how-to/import-export-ps) to import the Blueprint definition into your Management Group
+..* Connect-AzAccount
+..* Import-AzBlueprintWithArtifact -Name 'DevOpsBox' -ManagementGroupId '<YOUR_MANAGEMENT_GROUP_HERE>' -InputPath './'
