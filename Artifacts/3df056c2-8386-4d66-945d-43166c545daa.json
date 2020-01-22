@@ -1,0 +1,103 @@
+{
+  "kind": "template",
+  "properties": {
+    "displayName": "Development VNet",
+    "description": "Development VNet",
+    "dependsOn": [],
+    "template": {
+      "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "name": {
+          "type": "string"
+        },
+        "resourceGroup": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "addressPrefix": {
+          "type": "string"
+        },
+        "subnetName": {
+          "type": "string"
+        },
+        "subnetAddressPrefix": {
+          "type": "string"
+        },
+        "enableDdosProtection": {
+          "type": "bool"
+        }
+      },
+      "resources": [
+        {
+          "apiVersion": "2019-02-01",
+          "name": "[parameters('name')]",
+          "type": "Microsoft.Network/virtualNetworks",
+          "location": "[parameters('location')]",
+          "properties": {
+            "addressSpace": {
+              "addressPrefixes": [
+                "[parameters('addressPrefix')]"
+              ]
+            },
+            "subnets": [
+              {
+                "name": "[parameters('subnetName')]",
+                "properties": {
+                  "addressPrefix": "[parameters('subnetAddressPrefix')]",
+                  "addressPrefixes": [],
+                  "serviceEndpoints": [
+                    {
+                      "service": "Microsoft.AzureCosmosDB"
+                    },
+                    {
+                      "service": "Microsoft.EventHub"
+                    },
+                    {
+                      "service": "Microsoft.KeyVault"
+                    },
+                    {
+                      "service": "Microsoft.ServiceBus"
+                    },
+                    {
+                      "service": "Microsoft.Sql"
+                    },
+                    {
+                      "service": "Microsoft.Storage"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "resourceGroup": "DevOpsBox_Dev",
+    "parameters": {
+      "name": {
+        "value": "vnet_devopsbox_dev"
+      },
+      "resourceGroup": {
+        "value": "DevOpsBox_Dev"
+      },
+      "location": {
+        "value": "West US 2"
+      },
+      "addressPrefix": {
+        "value": "10.1.0.0/24"
+      },
+      "subnetName": {
+        "value": "default"
+      },
+      "subnetAddressPrefix": {
+        "value": "10.1.0.0/24"
+      },
+      "enableDdosProtection": {
+        "value": "[parameters('developmentVNet_enableDdosProtection')]"
+      }
+    }
+  }
+}

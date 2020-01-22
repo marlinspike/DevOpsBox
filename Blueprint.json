@@ -1,0 +1,77 @@
+{
+  "properties": {
+    "description": "DevOps In A Box",
+    "targetScope": "subscription",
+    "parameters": {
+      "developmentVNet_enableDdosProtection": {
+        "type": "bool",
+        "metadata": {
+          "displayName": "enableDdosProtection (Development VNet)"
+        },
+        "allowedValues": []
+      },
+      "storageAccount_storagedevopsboxType": {
+        "type": "string",
+        "metadata": {
+          "displayName": "storagedevopsboxType (Storage Account)"
+        },
+        "defaultValue": "Standard_LRS",
+        "allowedValues": [
+          "Standard_LRS",
+          "Standard_ZRS",
+          "Standard_GRS",
+          "Standard_RAGRS",
+          "Premium_LRS"
+        ]
+      },
+      "stagingVNet_enableDdosProtection": {
+        "type": "bool",
+        "metadata": {
+          "displayName": "enableDdosProtection (Staging VNet)"
+        },
+        "allowedValues": []
+      }
+    },
+    "resourceGroups": {
+      "DevOpsBox_Dev": {
+        "name": "DevOpsBox_Dev",
+        "location": "westus2",
+        "metadata": {
+          "displayName": "Development Resource Group"
+        },
+        "dependsOn": [],
+        "tags": {
+          "env": "Dev",
+          "src": "Blueprint",
+          "code": "DevOpsBox"
+        }
+      },
+      "DevOpsBox_Mgt": {
+        "name": "DevOpsBox_Mgt",
+        "location": "westus2",
+        "metadata": {
+          "displayName": "Management Resource Group"
+        },
+        "dependsOn": [],
+        "tags": {
+          "env": "Mgt",
+          "src": "Blueprint",
+          "code": "DevOpsBox"
+        }
+      },
+      "DevOpsBox_Stg": {
+        "name": "DevOpsBox_Stg",
+        "location": "westus2",
+        "metadata": {
+          "displayName": "Staging Resource Group"
+        },
+        "dependsOn": [],
+        "tags": {
+          "env": "Stg",
+          "src": "Blueprint",
+          "code": "DevOpsBox"
+        }
+      }
+    }
+  }
+}
