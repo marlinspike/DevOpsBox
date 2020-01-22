@@ -14,3 +14,8 @@ Dev Ops In A Box deploys:
 * Resource Manager Templates: For resources like VNets, a Strorage Account, etc.
 * Azure Policy: Things like Region and SKU restrictions will be provided
 * Azure RBAC: A few key roles used across the three resource groups will be enforced
+
+# Current State
+* Three Resource Groups Created
+* Three VNets created in each Resource Group
+* Storage Account deployed in Management Resource Group
