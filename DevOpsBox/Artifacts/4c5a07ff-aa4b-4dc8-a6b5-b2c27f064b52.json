@@ -1,0 +1,13 @@
+{
+  "kind": "policyAssignment",
+  "properties": {
+    "displayName": "Automatic provisioning of the Log Analytics monitoring agent should be enabled on your subscription",
+    "dependsOn": [],
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/475aae12-b88a-4572-8b36-9b712b2b3a17",
+    "parameters": {
+      "effect": {
+        "value": "[parameters('automaticprovisioningoftheLogAnalyticsmonitoringagentshouldbeenabledonyoursubscription_effect')]"
+      }
+    }
+  }
+}

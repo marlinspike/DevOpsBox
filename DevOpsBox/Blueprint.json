@@ -1,0 +1,102 @@
+{
+  "properties": {
+    "description": "DevOps In A Box",
+    "targetScope": "subscription",
+    "parameters": {
+      "automaticprovisioningoftheLogAnalyticsmonitoringagentshouldbeenabledonyoursubscription_effect": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Effect (Policy: Automatic provisioning of the Log Analytics monitoring agent should be enabled on your subscription)"
+        },
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ]
+      },
+      "storageAccount_storagedevopsboxType": {
+        "type": "string",
+        "metadata": {
+          "displayName": "storagedevopsboxType (Storage Account)"
+        },
+        "defaultValue": "Standard_LRS",
+        "allowedValues": [
+          "Standard_LRS",
+          "Standard_ZRS",
+          "Standard_GRS",
+          "Standard_RAGRS",
+          "Premium_LRS"
+        ]
+      },
+      "stagingVNet_enableDdosProtection": {
+        "type": "bool",
+        "metadata": {
+          "displayName": "enableDdosProtection (Staging VNet)"
+        },
+        "allowedValues": []
+      },
+      "[Usergrouporapplicationname]:Owner_RoleAssignmentName": {
+        "type": "array",
+        "metadata": {
+          "displayName": "[User group or application name] ([User group or application name] : Owner)",
+          "strongType": "PrincipalId"
+        }
+      },
+      "[Usergrouporapplicationname]:Owner_RoleAssignmentName_1": {
+        "type": "array",
+        "metadata": {
+          "displayName": "[User group or application name] ([User group or application name] : Owner)",
+          "strongType": "PrincipalId"
+        }
+      },
+      "[Usergrouporapplicationname]:Owner_RoleAssignmentName_2": {
+        "type": "array",
+        "metadata": {
+          "displayName": "[User group or application name] ([User group or application name] : Owner)",
+          "strongType": "PrincipalId"
+        }
+      }
+    },
+    "resourceGroups": {
+      "DevOpsBox_Dev": {
+        "name": "DevOpsBox_Dev",
+        "location": "westus2",
+        "metadata": {
+          "displayName": "Development Resource Group"
+        },
+        "dependsOn": [],
+        "tags": {
+          "env": "Dev",
+          "src": "Blueprint",
+          "code": "DevOpsBox"
+        }
+      },
+      "DevOpsBox_Mgt": {
+        "name": "DevOpsBox_Mgt",
+        "location": "westus2",
+        "metadata": {
+          "displayName": "Management Resource Group"
+        },
+        "dependsOn": [],
+        "tags": {
+          "env": "Mgt",
+          "src": "Blueprint",
+          "code": "DevOpsBox"
+        }
+      },
+      "DevOpsBox_Stg": {
+        "name": "DevOpsBox_Stg",
+        "location": "westus2",
+        "metadata": {
+          "displayName": "Staging Resource Group"
+        },
+        "dependsOn": [],
+        "tags": {
+          "env": "Stg",
+          "src": "Blueprint",
+          "code": "DevOpsBox"
+        }
+      }
+    }
+  }
+}
