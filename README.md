@@ -17,6 +17,7 @@ Dev Ops In A Box deploys:
 
 # Current State
 * Three Resource Groups Created
+* Azure DevTest Labs included in the Dev resource group
 * Three VNets created in each Resource Group
 * Storage Account deployed in Management Resource Group
 
